@@ -1,3 +1,9 @@
+Forked from https://github.com/mushanshitiancai/vscode-paste-image
+
+Added change to paste images with clickable links into markdown, by default.
+
+Please credit/donate to the original author, mushan!
+
 # Paste Image
 
 Paste image directly from clipboard to markdown/asciidoc(or other file)!

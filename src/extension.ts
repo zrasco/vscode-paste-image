@@ -407,6 +407,21 @@ class Paster {
         result = result.replace(this.PATH_VARIABLE_IMAGE_ORIGINAL_FILE_PATH, originalImagePath);
         result = result.replace(this.PATH_VARIABLE_IMAGE_FILE_NAME, fileName);
         result = result.replace(this.PATH_VARIABLE_IMAGE_FILE_NAME_WITHOUT_EXT, fileNameWithoutExt);
+		
+		// Make it clickable in markdown
+		if (languageId == "markdown") {
+			let link = this.insertPatternConfig;
+			
+			link = link.replace(this.PATH_VARIABLE_IMAGE_SYNTAX_PREFIX, "");
+			link = link.replace(this.PATH_VARIABLE_IMAGE_SYNTAX_SUFFIX, "");
+			
+			link = link.replace(this.PATH_VARIABLE_IMAGE_FILE_PATH, imageFilePath);
+			link = link.replace(this.PATH_VARIABLE_IMAGE_ORIGINAL_FILE_PATH, originalImagePath);
+			link = link.replace(this.PATH_VARIABLE_IMAGE_FILE_NAME, fileName);
+			link = link.replace(this.PATH_VARIABLE_IMAGE_FILE_NAME_WITHOUT_EXT, fileNameWithoutExt);
+		
+			result = "[" + result + "](" + link + ")";
+		}
 
         return result;
     }
